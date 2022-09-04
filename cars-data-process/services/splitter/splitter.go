@@ -1,7 +1,7 @@
 package splitter
 
 import (
-	"cars-data/process/models"
+	"github.com/netodeolino/cars-trace-ms/cars-data-process/models"
 )
 
 func SplitCsvData(data []models.CarEntity) (sl1, sl2, sl3, sl4 []models.CarEntity) {

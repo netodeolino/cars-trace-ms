@@ -1,9 +1,10 @@
 package main
 
 import (
-	"cars-data/process/services/process"
 	"fmt"
 	"time"
+
+	"github.com/netodeolino/cars-trace-ms/cars-data-process/services/process"
 )
 
 var startTime time.Time

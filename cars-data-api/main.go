@@ -1,9 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"github.com/netodeolino/cars-trace-ms/cars-data-api/routes"
 )
 
 func main() {
-	fmt.Println("TODO...")
+	routes.Start()
 }

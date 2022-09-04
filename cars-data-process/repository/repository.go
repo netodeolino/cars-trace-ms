@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"cars-data/process/config"
-	"cars-data/process/models"
+	"github.com/netodeolino/cars-trace-ms/cars-data-process/config"
+	"github.com/netodeolino/cars-trace-ms/cars-data-process/models"
 
 	"fmt"
 	"log"

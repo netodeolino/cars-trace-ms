@@ -1,4 +1,4 @@
-module cars-data/process
+module github.com/netodeolino/cars-trace-ms/cars-data-process
 
 go 1.19
 

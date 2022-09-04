@@ -1,11 +1,11 @@
 package process
 
 import (
-	"cars-data/process/config"
-	"cars-data/process/models"
-	"cars-data/process/repository"
-	"cars-data/process/services/reader"
-	"cars-data/process/services/splitter"
+	"github.com/netodeolino/cars-trace-ms/cars-data-process/config"
+	"github.com/netodeolino/cars-trace-ms/cars-data-process/models"
+	"github.com/netodeolino/cars-trace-ms/cars-data-process/repository"
+	"github.com/netodeolino/cars-trace-ms/cars-data-process/services/reader"
+	"github.com/netodeolino/cars-trace-ms/cars-data-process/services/splitter"
 
 	"sync"
 )

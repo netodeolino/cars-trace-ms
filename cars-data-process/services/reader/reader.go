@@ -1,11 +1,12 @@
 package reader
 
 import (
-	"cars-data/process/models"
 	"encoding/csv"
 	"log"
 	"os"
 	"strconv"
+
+	"github.com/netodeolino/cars-trace-ms/cars-data-process/models"
 )
 
 func GetCsvData() []models.CarEntity {
