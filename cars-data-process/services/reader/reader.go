@@ -6,10 +6,10 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/netodeolino/cars-trace-ms/cars-data-process/models"
+	"github.com/netodeolino/cars-trace-ms/cars-data-core/models"
 )
 
-func GetCsvData() []models.CarEntity {
+func GetCsvData() []models.CarModel {
 	file := openCsv()
 	lines := readCsv(file)
 	return mountCsvData(lines)
@@ -37,15 +37,15 @@ func readCsv(file *os.File) [][]string {
 	return lines
 }
 
-func mountCsvData(lines [][]string) []models.CarEntity {
-	carsData := []models.CarEntity{}
+func mountCsvData(lines [][]string) []models.CarModel {
+	carsData := []models.CarModel{}
 	for index, line := range lines {
 		if index > 0 {
 			latitude, _ := strconv.ParseFloat(line[1], 64)
 			longitude, _ := strconv.ParseFloat(line[2], 64)
 			stopped, _ := strconv.ParseBool(line[4])
 
-			car := models.CarEntity{
+			car := models.CarModel{
 				CarID:     line[0],
 				Latitude:  latitude,
 				Longitude: longitude,

@@ -4,7 +4,7 @@ import (
 	"gorm.io/gorm"
 )
 
-type CarEntity struct {
+type CarModel struct {
 	gorm.Model
 	CarID     string
 	Latitude  float64
@@ -18,11 +18,11 @@ type Tabler interface {
 	TableName() string
 }
 
-func (CarEntity) TableName() string {
+func (CarModel) TableName() string {
 	return "car"
 }
 
 func MigrateModels(db *gorm.DB) *gorm.DB {
-	db.AutoMigrate(&CarEntity{})
+	db.AutoMigrate(&CarModel{})
 	return db
 }

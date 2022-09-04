@@ -1,10 +1,10 @@
 package splitter
 
 import (
-	"github.com/netodeolino/cars-trace-ms/cars-data-process/models"
+	"github.com/netodeolino/cars-trace-ms/cars-data-core/models"
 )
 
-func SplitCsvData(data []models.CarEntity) (sl1, sl2, sl3, sl4 []models.CarEntity) {
+func SplitCsvData(data []models.CarModel) (sl1, sl2, sl3, sl4 []models.CarModel) {
 	length := len(data)
 
 	var fisrtPart int = (length / 4)

@@ -1,9 +1,9 @@
 package process
 
 import (
-	"github.com/netodeolino/cars-trace-ms/cars-data-process/config"
-	"github.com/netodeolino/cars-trace-ms/cars-data-process/models"
-	"github.com/netodeolino/cars-trace-ms/cars-data-process/repository"
+	"github.com/netodeolino/cars-trace-ms/cars-data-core/config"
+	"github.com/netodeolino/cars-trace-ms/cars-data-core/models"
+	"github.com/netodeolino/cars-trace-ms/cars-data-core/repository"
 	"github.com/netodeolino/cars-trace-ms/cars-data-process/services/reader"
 	"github.com/netodeolino/cars-trace-ms/cars-data-process/services/splitter"
 
@@ -26,7 +26,7 @@ func Start() {
 	wg.Wait()
 }
 
-func process(repo *repository.Repository, wg *sync.WaitGroup, slices ...[]models.CarEntity) {
+func process(repo *repository.Repository, wg *sync.WaitGroup, slices ...[]models.CarModel) {
 	for _, slice := range slices {
 		wg.Add(1)
 		go repo.SaveCsvData(wg, slice)

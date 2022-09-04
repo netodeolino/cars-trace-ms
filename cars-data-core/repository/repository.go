@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"github.com/netodeolino/cars-trace-ms/cars-data-process/config"
-	"github.com/netodeolino/cars-trace-ms/cars-data-process/models"
+	"github.com/netodeolino/cars-trace-ms/cars-data-core/config"
+	"github.com/netodeolino/cars-trace-ms/cars-data-core/models"
 
 	"fmt"
 	"log"
@@ -36,7 +36,11 @@ func (repo *Repository) InitializeDatabase(config *config.Config) {
 	repo.DB = models.MigrateModels(db)
 }
 
-func (repo *Repository) SaveCsvData(wg *sync.WaitGroup, data []models.CarEntity) {
+func (repo *Repository) SaveCsvData(wg *sync.WaitGroup, data []models.CarModel) {
 	defer wg.Done()
 	repo.DB.CreateInBatches(data, 100)
+}
+
+func (repo *Repository) getData(page *models.Page) *models.Page {
+
 }
