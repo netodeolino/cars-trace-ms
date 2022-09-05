@@ -17,7 +17,7 @@ func (service *Service) Index(c *gin.Context) {
 
 func (service *Service) GetAllData(c *gin.Context) {
 	config := config.GetConfig()
-	repo := repository.NewRepository(config)
+	repo, _ := repository.NewRepository(config)
 	page := request.GeneratePageFromRequest(c)
 	result := repo.GetAllData(page)
 
