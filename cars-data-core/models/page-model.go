@@ -1,10 +1,6 @@
 package models
 
-type Data interface {
-	CarModel | []CarModel
-}
-
-type Page[T Data] struct {
+type Page[T any] struct {
 	Limit int    `json:"limit"`
 	Page  int    `json:"page"`
 	Sort  string `json:"sort"`

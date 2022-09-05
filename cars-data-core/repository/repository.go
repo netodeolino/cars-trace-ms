@@ -41,6 +41,17 @@ func (repo *Repository) SaveCsvData(wg *sync.WaitGroup, data []models.CarModel) 
 	repo.DB.CreateInBatches(data, 100)
 }
 
-func (repo *Repository) getData(page *models.Page) *models.Page {
+func (repo *Repository) getData(page *models.Page[models.CarModel]) (*models.Page[[]models.CarModel], error) {
+	offset := (page.Page - 1) * page.Limit
+	queryBuider := repo.DB.Limit(page.Limit).Offset(offset).Order(page.Sort)
+	newPage := models.Page[[]models.CarModel]{Limit: page.Limit, Page: page.Page, Sort: page.Sort, Data: nil}
 
+	result := queryBuider.Model(&models.CarModel{}).Where(page.Data).Find(&newPage.Data)
+
+	if result.Error != nil {
+		msg := result.Error
+		return nil, msg
+	}
+
+	return &newPage, nil
 }

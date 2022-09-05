@@ -4,10 +4,11 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
+	"github.com/netodeolino/cars-trace-ms/cars-data-core/models"
 )
 
-func GeneratePageFromRequest(c *gin.Context) models.Page {
-	limit := 2
+func GeneratePageFromRequest(c *gin.Context) models.Page[models.CarModel] {
+	limit := 10
 	page := 1
 	sort := "created_at asc"
 	query := c.Request.URL.Query()
@@ -28,5 +29,5 @@ func GeneratePageFromRequest(c *gin.Context) models.Page {
 		}
 	}
 
-	return models.Page{limit, page, sort}
+	return models.Page[models.CarModel]{limit, page, sort, nil}
 }
