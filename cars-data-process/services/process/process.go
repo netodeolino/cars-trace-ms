@@ -18,8 +18,7 @@ func Start() {
 	slice01, slice02, slice03, slice04 := splitter.SplitCsvData(data)
 
 	config := config.GetConfig()
-	repository := &repository.Repository{}
-	repository.InitializeDatabase(config)
+	repository := repository.NewRepository(config)
 
 	process(repository, &wg, slice01, slice02, slice03, slice04)
 

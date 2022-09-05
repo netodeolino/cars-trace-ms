@@ -2,30 +2,27 @@ package routes
 
 import (
 	"fmt"
-	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/netodeolino/cars-trace-ms/cars-data-api/service"
 )
 
-func index(c *gin.Context) {
-	c.String(http.StatusOK, "Hello World")
-}
-
-func Teste() gin.HandlerFunc {
+func middleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		fmt.Printf("Request with param %s", c.Query("page"))
+		fmt.Printf("Requesting API from IP: %s\n", c.ClientIP())
 	}
 }
 
 func Start() {
 	router := gin.Default()
-	router.GET("/", index)
+	service := &service.Service{}
+
+	router.GET("/", service.Index)
 
 	api := router.Group("/api")
-
-	api.Use(Teste())
+	api.Use(middleware())
 	{
-		api.GET("/", index)
+		api.GET("/", service.GetAllData)
 	}
 
 	router.Run("localhost:8080")

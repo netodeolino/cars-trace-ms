@@ -13,21 +13,22 @@ func GeneratePageFromRequest(c *gin.Context) models.Page[models.CarModel] {
 	sort := "created_at asc"
 	query := c.Request.URL.Query()
 
+loop:
 	for key, value := range query {
 		queryValue := value[len(value)-1]
 
 		switch key {
 		case "limit":
 			limit, _ = strconv.Atoi(queryValue)
-			break
+			break loop
 		case "page":
 			page, _ = strconv.Atoi(queryValue)
-			break
+			break loop
 		case "sort":
 			sort = queryValue
-			break
+			break loop
 		}
 	}
 
-	return models.Page[models.CarModel]{limit, page, sort, nil}
+	return models.Page[models.CarModel]{Limit: limit, Page: page, Sort: sort, Data: models.CarModel{}}
 }
