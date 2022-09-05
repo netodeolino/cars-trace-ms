@@ -1,6 +1,8 @@
 package process
 
 import (
+	"log"
+
 	"github.com/netodeolino/cars-trace-ms/cars-data-core/config"
 	"github.com/netodeolino/cars-trace-ms/cars-data-core/models"
 	"github.com/netodeolino/cars-trace-ms/cars-data-core/repository"
@@ -18,7 +20,11 @@ func Start() {
 	slice01, slice02, slice03, slice04 := splitter.SplitCsvData(data)
 
 	config := config.GetConfig()
-	repository, _ := repository.NewRepository(config)
+	repository, err := repository.NewRepository(config)
+
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	process(repository, &wg, slice01, slice02, slice03, slice04)
 

@@ -1,6 +1,7 @@
 package service
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -17,9 +18,18 @@ func (service *Service) Index(c *gin.Context) {
 
 func (service *Service) GetAllData(c *gin.Context) {
 	config := config.GetConfig()
-	repo, _ := repository.NewRepository(config)
+	repo, err := repository.NewRepository(config)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	page := request.GeneratePageFromRequest(c)
-	result := repo.GetAllData(page)
+	result, err := repo.GetAllData(&page)
+
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	c.IndentedJSON(http.StatusOK, result)
 }
