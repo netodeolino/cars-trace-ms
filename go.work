@@ -1,0 +1,7 @@
+go 1.19
+
+use (
+	./cars-data-api/
+	./cars-data-core
+	./cars-data-process
+)
