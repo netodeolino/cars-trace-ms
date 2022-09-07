@@ -1,0 +1,38 @@
+version: '3.4'
+
+services:
+  cars-data-database:
+    image: postgres:14.5
+    restart: always
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: cars
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: developer
+      TZ: 'Europe/Lisbon'
+
+  cars-data-api:
+    container_name: cars-data-api
+    build:
+      context: cars-data-api
+      args:
+        - DB_HOST=host.docker.internal
+        - DB_DATABASE=cars
+        - DB_USERNAME=postgres
+        - DB_PASSWORD=developer
+    restart: always
+    ports:
+      - '8080:8080'
+    depends_on:
+      - cars-data-database
+    environment:
+      DB_HOST: host.docker.internal
+      DB_DATABASE: cars
+      DB_USERNAME: postgres
+      DB_PASSWORD: developer
+
+volumes:
+  postgresdata:

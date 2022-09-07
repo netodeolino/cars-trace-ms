@@ -124,10 +124,10 @@ github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd h1:TRLaZ9cD/w
 github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd/go.mod h1:6dJC0mAP4ikYIbvyc7fijjWJddQyLn8Ig3JB5CqoB9Q=
 github.com/modern-go/reflect2 v1.0.2 h1:xBagoLtFs94CBntxluKeaWgTMpvLxC4ur3nMaC9Gz0M=
 github.com/modern-go/reflect2 v1.0.2/go.mod h1:yWuevngMOJpCy52FWWMvUC8ws7m/LJsjYzDa0/r8luk=
-github.com/netodeolino/cars-trace-ms/cars-data-core v0.0.0-20220905101509-a8d353fb7b6f h1:FOSoyoaXiaj1iTK/rjYzPQ68RuT58Hhqbz6lGCj2P/o=
-github.com/netodeolino/cars-trace-ms/cars-data-core v0.0.0-20220905101509-a8d353fb7b6f/go.mod h1:5vz+FFCjotmzvIu5QyB6rv27w9ywF4jhUdh3hdCYO2w=
 github.com/netodeolino/cars-trace-ms/cars-data-core v0.0.0-20220905111923-0152279b3ce9 h1:2KdOW/IkTUmOOv8m5kRICoht7mzSPb38Bj0XLKl0NLk=
 github.com/netodeolino/cars-trace-ms/cars-data-core v0.0.0-20220905111923-0152279b3ce9/go.mod h1:5vz+FFCjotmzvIu5QyB6rv27w9ywF4jhUdh3hdCYO2w=
+github.com/netodeolino/cars-trace-ms/cars-data-core v0.0.0-20220907151836-0bb201ccd74e h1:CcSueo2qYJrRk0VM3MgM8vbJDbsKo4e0LgfYUqG8iOM=
+github.com/netodeolino/cars-trace-ms/cars-data-core v0.0.0-20220907151836-0bb201ccd74e/go.mod h1:5vz+FFCjotmzvIu5QyB6rv27w9ywF4jhUdh3hdCYO2w=
 github.com/pelletier/go-toml/v2 v2.0.5 h1:ipoSadvV8oGUjnUbMub59IDPPwfxF694nG/jwbMiyQg=
 github.com/pelletier/go-toml/v2 v2.0.5/go.mod h1:OMHamSCAODeSsVrwwvcJOaoN0LIUIaFVNZzmWyNfXas=
 github.com/pkg/diff v0.0.0-20210226163009-20ebb0f2a09e/go.mod h1:pJLUxLENpZxwdsKMEsNbx1VGcRFpLqf3715MtcvvzbA=

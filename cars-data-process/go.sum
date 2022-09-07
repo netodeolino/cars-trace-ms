@@ -91,6 +91,8 @@ github.com/mattn/go-isatty v0.0.7/go.mod h1:Iq45c/XA43vh69/j3iqttzPXn0bhXyGjM0Hd
 github.com/mattn/go-isatty v0.0.12/go.mod h1:cbi8OIDigv2wuxKPP5vlRcQ1OAZbq2CE4Kysco4FUpU=
 github.com/netodeolino/cars-trace-ms/cars-data-core v0.0.0-20220905113503-79a6eb813829 h1:/MEBcvKo5xIBGLdqnmZA9P+y1/iPsrwN48Fb4z2DA+M=
 github.com/netodeolino/cars-trace-ms/cars-data-core v0.0.0-20220905113503-79a6eb813829/go.mod h1:5vz+FFCjotmzvIu5QyB6rv27w9ywF4jhUdh3hdCYO2w=
+github.com/netodeolino/cars-trace-ms/cars-data-core v0.0.0-20220907151836-0bb201ccd74e h1:CcSueo2qYJrRk0VM3MgM8vbJDbsKo4e0LgfYUqG8iOM=
+github.com/netodeolino/cars-trace-ms/cars-data-core v0.0.0-20220907151836-0bb201ccd74e/go.mod h1:5vz+FFCjotmzvIu5QyB6rv27w9ywF4jhUdh3hdCYO2w=
 github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
