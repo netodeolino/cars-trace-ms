@@ -16,10 +16,11 @@ FROM gcr.io/distroless/base-debian10
 
 WORKDIR /
 
+COPY receiver/car-data-example.csv ./receiver/
 COPY --from=build /server /server
 
 USER nonroot:nonroot
 
-ENV RECEIVED_CSV_PATH=$ENV_RECEIVED_CSV_PATH
+ENV RECEIVED_CSV_PATH=receiver/car-data-example.csv
 
 ENTRYPOINT [ "/server" ]

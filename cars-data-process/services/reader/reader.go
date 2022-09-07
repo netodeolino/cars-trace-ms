@@ -2,7 +2,6 @@ package reader
 
 import (
 	"encoding/csv"
-	"fmt"
 	"log"
 	"os"
 	"strconv"
@@ -18,7 +17,6 @@ func GetCsvData() []models.CarModel {
 
 func openCsv() *os.File {
 	path := os.Getenv("RECEIVED_CSV_PATH")
-	fmt.Println(path)
 	file, err := os.Open(path)
 
 	if err != nil {

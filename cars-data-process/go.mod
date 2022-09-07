@@ -2,7 +2,7 @@ module github.com/netodeolino/cars-trace-ms/cars-data-process
 
 go 1.19
 
-require github.com/netodeolino/cars-trace-ms/cars-data-core v0.0.0-20220905111923-0152279b3ce9
+require github.com/netodeolino/cars-trace-ms/cars-data-core v0.0.0-20220905113503-79a6eb813829
 
 require (
 	github.com/jackc/chunkreader/v2 v2.0.1 // indirect

@@ -17,7 +17,7 @@ type DBConfig struct {
 func GetConfig() *Config {
 	return &Config{
 		DB: &DBConfig{
-			Host:     "127.0.0.1",
+			Host:     "host.docker.internal",
 			Username: "postgres",
 			Password: "developer",
 			Database: "cars",
