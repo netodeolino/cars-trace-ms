@@ -2,9 +2,10 @@ package reader
 
 import (
 	"encoding/csv"
-	"log"
 	"os"
 	"strconv"
+
+	log "github.com/sirupsen/logrus"
 
 	"github.com/netodeolino/cars-trace-ms/cars-data-core/models"
 )
@@ -20,7 +21,7 @@ func openCsv() *os.File {
 	file, err := os.Open(path)
 
 	if err != nil {
-		log.Fatal(err)
+		log.Error(err)
 	}
 
 	return file
@@ -30,7 +31,7 @@ func readCsv(file *os.File) [][]string {
 	lines, err := csv.NewReader(file).ReadAll()
 
 	if err != nil {
-		log.Fatal(err)
+		log.Error(err)
 	}
 
 	defer file.Close()

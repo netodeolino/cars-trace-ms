@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"fmt"
+	log "github.com/sirupsen/logrus"
 
 	"github.com/gin-gonic/gin"
 	"github.com/netodeolino/cars-trace-ms/cars-data-api/service"
@@ -9,7 +9,7 @@ import (
 
 func middleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		fmt.Printf("Requesting API from IP: %s\n", c.ClientIP())
+		log.Info("Requesting API from IP: %s\n", c.ClientIP())
 	}
 }
 

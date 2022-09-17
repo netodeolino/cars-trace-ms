@@ -1,8 +1,9 @@
 package service
 
 import (
-	"log"
 	"net/http"
+
+	log "github.com/sirupsen/logrus"
 
 	"github.com/gin-gonic/gin"
 	"github.com/netodeolino/cars-trace-ms/cars-data-api/request"
@@ -21,14 +22,14 @@ func (service *Service) GetAllData(c *gin.Context) {
 	repo, err := repository.NewRepository(config)
 
 	if err != nil {
-		log.Fatal(err)
+		log.Error(err)
 	}
 
 	page := request.GeneratePageFromRequest(c)
 	result, err := repo.GetAllData(&page)
 
 	if err != nil {
-		log.Fatal(err)
+		log.Error(err)
 	}
 
 	c.IndentedJSON(http.StatusOK, result)

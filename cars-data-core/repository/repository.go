@@ -5,8 +5,9 @@ import (
 	"github.com/netodeolino/cars-trace-ms/cars-data-core/models"
 
 	"fmt"
-	"log"
 	"sync"
+
+	log "github.com/sirupsen/logrus"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -30,7 +31,7 @@ func NewRepository(config *config.Config) (*Repository, error) {
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
 	if err != nil {
-		log.Fatal(err)
+		log.Error(err)
 		return nil, err
 	}
 

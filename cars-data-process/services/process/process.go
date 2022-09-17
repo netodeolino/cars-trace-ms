@@ -1,7 +1,7 @@
 package process
 
 import (
-	"log"
+	log "github.com/sirupsen/logrus"
 
 	"github.com/netodeolino/cars-trace-ms/cars-data-core/config"
 	"github.com/netodeolino/cars-trace-ms/cars-data-core/models"
@@ -23,7 +23,7 @@ func Start() {
 	repository, err := repository.NewRepository(config)
 
 	if err != nil {
-		log.Fatal(err)
+		log.Error(err)
 	}
 
 	process(repository, &wg, slice01, slice02, slice03, slice04)
